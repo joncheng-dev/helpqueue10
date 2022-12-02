@@ -1,5 +1,6 @@
 import React from "react";
 import TicketList from "./TicketList";
+import NewTicketForm from "./NewTicketForm";
 
 class TicketControl extends React.Component {
   constructor(props) {
@@ -8,6 +9,12 @@ class TicketControl extends React.Component {
       formShowing: false,
     };
   }
+
+  handleClick = () => {
+    this.setState((prevState) => ({
+      formShowing: !prevState.formShowing,
+    }));
+  };
 
   render() {
     let currentlyDisplayed = null;
@@ -24,7 +31,7 @@ class TicketControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyDisplayed}
-        <button> {buttonText}</button>
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
