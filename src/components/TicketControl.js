@@ -46,7 +46,6 @@ class TicketControl extends React.Component {
   handleDeleteTicket = () => {
     const newMainTicketList = this.state.mainTicketList.filter((ticket) => ticket.id !== this.state.selected.id);
     this.setState({
-      formShowing: false,
       mainTicketList: newMainTicketList,
       selected: null,
     });

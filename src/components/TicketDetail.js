@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function TicketDetail(props) {
   const { ticket } = props;
@@ -17,5 +18,11 @@ function TicketDetail(props) {
     </React.Fragment>
   );
 }
+
+TicketDetail.propTypes = {
+  ticket: PropTypes.object,
+  onClickingEdit: PropTypes.func,
+  onClickingDelete: PropTypes.func,
+};
 
 export default TicketDetail;
